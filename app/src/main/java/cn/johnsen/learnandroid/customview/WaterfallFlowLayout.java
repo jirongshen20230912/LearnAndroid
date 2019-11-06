@@ -1,4 +1,4 @@
-package cn.johnsen.learnandroid.CustomView;
+package cn.johnsen.learnandroid.customview;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -20,7 +20,7 @@ public class WaterfallFlowLayout extends ViewGroup {
     /**
      * 用来保存行高的列表
      */
-    private List<Integer> lstLineHegiht = new ArrayList<>();
+    private List<Integer> lstLineHeight = new ArrayList<>();
     /**
      * 用来保存每行views的列表
      */
@@ -108,7 +108,7 @@ public class WaterfallFlowLayout extends ViewGroup {
                     measureWidth = Math.max(measureWidth,iCurLineW);
                     measureHeight += iCurLineH;
                     //4.1.2.保存这一行数据，及行高
-                    lstLineHegiht.add(iCurLineH);
+                    lstLineHeight.add(iCurLineH);
                     lstLineView.add(viewList);
 
                     //4.2.纪录新的行信息
@@ -139,7 +139,7 @@ public class WaterfallFlowLayout extends ViewGroup {
 
                     //6.2.将当前行的viewList添加至总的mViewsList，将行高添加至总的行高List
                     lstLineView.add(viewList);
-                    lstLineHegiht.add(iCurLineH);
+                    lstLineHeight.add(iCurLineH);
 
                 }
 
@@ -177,9 +177,9 @@ public class WaterfallFlowLayout extends ViewGroup {
                 curLeft += childView.getMeasuredWidth() + layoutParams.leftMargin + layoutParams.rightMargin;
             }
             curLeft = 0;
-            curTop += lstLineHegiht.get(i);
+            curTop += lstLineHeight.get(i);
         }
         lstLineView.clear();
-        lstLineHegiht.clear();
+        lstLineHeight.clear();
     }
 }
