@@ -49,10 +49,20 @@ fun main() {
 
 }
 
-fun doStudy(study: Study){
-    study.doHomework()
-    study.readBooks()
+val study: Study? = null
+fun doStudy1() {//后面加上 ? 使study可以传入null
+    study?.let {//let函数可以处理全局变量判空问题
+        it.readBooks()
+        it.doHomework()
+    }
 }
+
+fun doStudy(study: Study?) {//后面加上 ? 使study可以传入null
+//    study?.doHomework()//?.表示判空操作 为空时不执行
+//    study?.readBooks()
+}
+
+fun getTextLength(text: String?) = text?.length ?: 0//?:表示左边的表达式不为空就返回左边 否则返回右边
 
 
 fun largerNumber(a: Int, b: Int) = max(a, b)
