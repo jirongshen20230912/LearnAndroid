@@ -1,5 +1,6 @@
-package cn.johnsen.learnandroid.kotlin
+package cn.johnsen.learnandroid.kotlin.basic
 
+import cn.johnsen.learnandroid.kotlin.basic.classinfo.Study
 import cn.johnsen.learnandroid.kotlin.classinfo.*
 import kotlin.math.max
 
@@ -45,8 +46,10 @@ fun main() {
 //    val cellPhone = CellPhone("小米",2800.00)
 //    println(cellPhone)
 
-    Singleton.singletonPrint()
+//    Singleton.singletonPrint()
 
+    printParams(123)
+    printParams1(num = 123)//键值对的方式来传参
 }
 
 val study: Study? = null
@@ -77,4 +80,12 @@ fun getScore1(name: String) = when (name) {
     "Tom" -> 89
     "J" -> 60
     else -> 0
+}
+
+fun printParams(num: Int, str: String = "hello") {//默认参数值
+    println("num is $num,str is $str")//${}字符串表达式
+}
+
+fun printParams1(str: String = "hello", num: Int) {//默认参数值
+    println("num is${num},str is${str}")//${}字符串表达式
 }

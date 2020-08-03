@@ -1,4 +1,4 @@
-package cn.johnsen.learnandroid.kotlin.classinfo
+package cn.johnsen.learnandroid.kotlin.basic.classinfo
 
 /**
  * 简 述: 接口

@@ -1,4 +1,4 @@
-package cn.johnsen.learnandroid.kotlin.lambda
+package cn.johnsen.learnandroid.kotlin.basic.lambda
 
 /**
  * 简 述:
