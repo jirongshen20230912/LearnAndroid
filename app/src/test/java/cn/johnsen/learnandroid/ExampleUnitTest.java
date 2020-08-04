@@ -2,6 +2,8 @@ package cn.johnsen.learnandroid;
 
 import org.junit.Test;
 
+import cn.johnsen.learnandroid.kotlin.basic.fuction.HelperKt;
+
 import static org.junit.Assert.*;
 
 /**
@@ -12,6 +14,6 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        HelperKt.doSomething();//java调用kotlin顶层方法
     }
 }

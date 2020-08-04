@@ -1,7 +1,7 @@
 package cn.johnsen.learnandroid.kotlin.basic
 
 import cn.johnsen.learnandroid.kotlin.basic.classinfo.Study
-import cn.johnsen.learnandroid.kotlin.classinfo.*
+//import cn.johnsen.learnandroid.kotlin.classinfo.*
 import kotlin.math.max
 
 /**

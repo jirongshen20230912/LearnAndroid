@@ -10,11 +10,13 @@ import kotlinx.android.synthetic.main.activity_first.*
 
 class FirstActivity : AppCompatActivity() {
 
-    companion object {
+    companion object {//模仿静态类的写法
+        @JvmStatic //使方法实际成为静态的 只能加在单例类 和 companion object中的方法上
         fun actionStart(context: Context, data1: String, data2: String) {
-            val intent = Intent(context, FirstActivity::class.java)
-            intent.putExtra(data1, data1)
-            intent.putExtra(data2, data2)
+            val intent = Intent(context, FirstActivity::class.java).apply {
+                putExtra(data1, data1)
+                putExtra(data2, data2)
+            }
             context.startActivity(intent)
         }
     }
