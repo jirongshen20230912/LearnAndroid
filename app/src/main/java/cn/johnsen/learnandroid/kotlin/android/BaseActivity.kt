@@ -1,7 +1,7 @@
 package cn.johnsen.learnandroid.kotlin.android
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 /**
  * 简 述:

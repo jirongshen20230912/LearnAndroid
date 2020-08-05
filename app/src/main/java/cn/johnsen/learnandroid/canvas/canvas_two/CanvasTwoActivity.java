@@ -3,7 +3,7 @@ package cn.johnsen.learnandroid.canvas.canvas_two;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import cn.johnsen.learnandroid.R;
