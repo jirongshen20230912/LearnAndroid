@@ -5,7 +5,7 @@ package cn.johnsen.learnandroid.kotlin.basic
  * 作 者: 沈吉荣
  * 时 间: 2020/8/7
  */
-//定义普通接口的话 when会要求有else分支 否则编译不通过
+//定义普通接口的话 when会要求必须有else分支 否则编译不通过
 //interface Result
 //class Success(val msg:String):Result
 //class Failure(val error: Exception):Result
