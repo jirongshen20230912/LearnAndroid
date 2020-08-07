@@ -14,6 +14,9 @@ import java.lang.StringBuilder
 class FirstActivity : AppCompatActivity(), View.OnClickListener {
     private val recyclerList = ArrayList<RecyclerData>()
 
+    //    private  var adapter: RecyclerAdapter? = null//需要初始化为null
+    private lateinit var adapter: RecyclerAdapter//lateinit延迟初始化
+
     companion object {
         //模仿静态类的写法
         @JvmStatic //使方法实际成为静态的 只能加在单例类 和 companion object中的方法上
@@ -30,13 +33,15 @@ class FirstActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_first)
         supportActionBar?.hide()//隐藏标题栏
+        tv_click.setOnClickListener(this)
 //        tv_click.setOnClickListener { Toast.makeText(this, "", Toast.LENGTH_LONG).show() }
-        initData()
 //        val layoutManager = LinearLayoutManager(this)
 //        layoutManager.orientation = LinearLayoutManager.HORIZONTAL//横向滚动
         val layoutManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
         recyclerView.layoutManager = layoutManager
-        val adapter = RecyclerAdapter(recyclerList)
+        if (!::adapter.isInitialized) {//判断变量adapter是否已经初始化 避免重复初始化
+            adapter = RecyclerAdapter(recyclerList)
+        }
         recyclerView.adapter = adapter
     }
 
@@ -63,7 +68,10 @@ class FirstActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.tv_click -> {
-
+                println("111")
+                initData()
+//                adapter?.notifyDataSetChanged()//adapter如果定义成普通var就需要判空才行
+                adapter.notifyDataSetChanged()//adapter如果延迟初始化后就不用判空了
             }
         }
     }
