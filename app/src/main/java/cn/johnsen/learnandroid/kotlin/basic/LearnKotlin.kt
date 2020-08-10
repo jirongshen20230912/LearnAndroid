@@ -50,6 +50,8 @@ fun main() {
 
     printParams(123)
     printParams1(num = 123)//键值对的方式来传参
+
+    val count = "123dwqef".lettersCount()//调用扩展函数
 }
 
 val study: Study? = null

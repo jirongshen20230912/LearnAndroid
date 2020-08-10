@@ -8,6 +8,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import cn.johnsen.learnandroid.R
+import cn.johnsen.learnandroid.kotlin.basic.times
 import kotlinx.android.synthetic.main.activity_first.*
 import java.lang.StringBuilder
 
@@ -56,19 +57,20 @@ class FirstActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-    private fun getRandomString(str: String): String {
-        val n = (1..20).random()
-        val builder = StringBuilder()
-        repeat(n) {
-            builder.append(str)
-        }
-        return builder.toString()
-    }
+//    private fun getRandomString(str: String): String {
+//        val n = (1..20).random()
+//        val builder = StringBuilder()
+//        repeat(n) {
+//            builder.append(str)
+//        }
+//        return builder.toString()
+//    }
+
+    private fun getRandomString(str: String) = str * (1..20).random()//运算符重载
 
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.tv_click -> {
-                println("111")
                 initData()
 //                adapter?.notifyDataSetChanged()//adapter如果定义成普通var就需要判空才行
                 adapter.notifyDataSetChanged()//adapter如果延迟初始化后就不用判空了
